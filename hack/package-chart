@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# package-chart chart dst index-file
+main() {
+  repo_root=$(git rev-parse --show-toplevel)
+  chart_dir="$repo_root/$1"
+  dst_dir="$2"
+
+  args=(--debug)
+  if [[ -n "${3-}" ]]; then
+    args+=(--merge "$3")
+  fi
+
+  pushd "$dst_dir"
+  helm package "$chart_dir"
+  helm repo index . "${args[@]}"
+  popd > /dev/null
+}
+
+
+main "$@"
