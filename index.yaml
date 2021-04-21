@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  echo-webhook:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-04-21T15:07:00.465344-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 33508a4a3edd838dbd2b103ca7cd76ad45dbe70fb0b22587595fbe3a77782c99
+    name: echo-webhook
+    type: application
+    urls:
+    - echo-webhook-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-04-21T15:07:00.464746-07:00"
